@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "22c2ec55-833a-43bb-8e29-aac995027396",
+		"name": "Petshop",
+		"description": "Coleção destinada ao consumo da API petshop do curso de Node.js com express da Alura.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16658273"
+	},
+	"item": [
+		{
+			"name": "Atendimentos",
+			"item": [
+				{
+					"name": "Lista todos atendimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"atendimentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo do retorno da listagem de serviços cadastrados",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/atendimentos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"atendimentos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c2-bbfeeKwwlyUvlaUgQM7tgFSPQy0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 11:30:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"cliente\": \"gabriel\",\n        \"pet\": \"adabi\",\n        \"servico\": \"banho e tosa\",\n        \"data\": \"2022-10-04T03:10:00.000Z\",\n        \"dataCriacao\": \"2022-10-03T11:10:25.000Z\",\n        \"status\": \"agendado\",\n        \"observacoes\": \"gata castrada\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Detalha um atendimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/atendimentos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"atendimentos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo do retorno do detalhamento de um serviço cadastrado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/atendimentos/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"atendimentos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c0-TwwajPWhxqx3fhKNTYORJkCnnbs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 11:31:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"2022-10-04T03:10:00.000Z\",\n    \"dataCriacao\": \"2022-10-03T11:10:25.000Z\",\n    \"status\": \"agendado\",\n    \"observacoes\": \"gata castrada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cria um atendimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"04/10/2022\",\n    \"dataCriacao\": \"03/10/2022\",\n    \"status\": \"agendado\",\n    \"observacoes\": \"gata castrada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"atendimentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo do retorno de um cadastro de serviço",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"04/10/2022\",\n    \"dataCriacao\": \"03/10/2022\",\n    \"status\": \"agendado\",\n    \"observacoes\": \"gata castrada\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/atendimentos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"atendimentos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-o5LV1msbHWdUFYZvCtteraWb/Pw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 11:29:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"04/10/2022\",\n    \"dataCriacao\": \"03/10/2022\",\n    \"status\": \"agendado\",\n    \"observacoes\": \"gata castrada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualiza um atendimento",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"04/10/2022\",\n    \"status\": \"em atendimento\",\n    \"observacoes\": \"gata castrada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/atendimentos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"atendimentos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo da atualização de um serviço",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"04/10/2022\",\n    \"status\": \"em atendimento\",\n    \"observacoes\": \"gata castrada\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/atendimentos/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"atendimentos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"98-pLfHpT2Gd02pOLmHNZT9ih00fkE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 11:35:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cliente\": \"gabriel\",\n    \"pet\": \"adabi\",\n    \"servico\": \"banho e tosa\",\n    \"data\": \"2022-10-04 00:10:00\",\n    \"status\": \"em atendimento\",\n    \"observacoes\": \"gata castrada\",\n    \"id\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "Deleta um atendimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/atendimentos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"atendimentos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo do retorno da exclusão de um serviço",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/atendimentos/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"atendimentos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8-h5EdGu1QmHe4OkjsU292jNzSLfE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 11:32:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
